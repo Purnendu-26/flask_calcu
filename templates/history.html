@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation History</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            font-family: Arial, sans-serif;
+            color: #e6e6fa;
+            text-align: center;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 600px;
+            background-color: #2c2c2c;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #800080;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #e6e6fa;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculation History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Operand 1</th>
+                <th>Operator</th>
+                <th>Operand 2</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for operation in operations %}
+            <tr>
+                <td>{{ operation.operand1 }}</td>
+                <td>{{ operation.operator }}</td>
+                <td>{{ operation.operand2 }}</td>
+                <td>{{ operation.result }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Back to Calculator</a>
+</body>
+</html>
